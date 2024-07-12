@@ -1,13 +1,13 @@
 logsBucket: gs://gcp_cloud_build_test
 steps:
 
-  - name: 'test-allwin/cloud-builders/mvn'
+  - name: 'gcr.io/cloud-builders/mvn'
     args: ['clean', 'package']
     dir: '.'
-  - name: 'test-allwin/cloud-builders/docker'
-    args: ['build', '-t', 'test-allwin/sandbox-427408/gcloud-build-test-img:tag', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/sandbox-427408/gcloud-build-test-img:tag', '.']
     dir: '.'
-  - name: 'test-allwin/cloud-builders/docker'
-    args: ['push', 'test-allwin/sandbox-427408/gcloud-build-test-img:tag']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/sandbox-427408/gcloud-build-test-img:tag']
 
 serviceAccount: sandbox-427408@appspot.gserviceaccount.com
