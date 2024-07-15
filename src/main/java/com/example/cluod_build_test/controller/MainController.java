@@ -20,4 +20,9 @@ public class MainController {
     public String wish() {
         return "Happy birthday.......!";
     }
+
+    @GetMapping("/ask")
+    public String ask() {
+        return "How is your day....?";
+    }
 }
