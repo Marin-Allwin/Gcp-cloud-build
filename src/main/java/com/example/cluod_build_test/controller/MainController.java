@@ -15,4 +15,9 @@ public class MainController {
     public String greet() {
         return "Good morning , have a nice day";
     }
+
+    @GetMapping("/wish")
+    public String wish() {
+        return "Happy birthday.......!";
+    }
 }
