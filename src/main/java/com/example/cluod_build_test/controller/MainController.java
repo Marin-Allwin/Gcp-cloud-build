@@ -10,4 +10,9 @@ public class MainController {
     public String hello() {
         return "Hello, World!";
     }
+
+    @GetMapping("/greet")
+    public String greet() {
+        return "Good morning , have a nice day";
+    }
 }
