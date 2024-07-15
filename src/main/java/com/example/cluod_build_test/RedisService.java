@@ -18,7 +18,7 @@ public class RedisService {
         if (redisTemplate.hasKey(key)) {
             return redisTemplate.opsForValue().get(key);
         } else {
-            return "Value does not exist";
+            return "Value does not exist in redis";
         }
     }
 
