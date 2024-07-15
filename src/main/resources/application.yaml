@@ -1,0 +1,17 @@
+Spring:
+  application:
+    name: cloud-build-test
+
+
+spring:
+  redis:
+    #    host: 10.103.162.43
+#    host: 35.238.126.89
+    host: 10.133.145.91
+    port: 6379
+    ssl : true
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0

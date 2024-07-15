@@ -20,14 +20,14 @@ steps:
     args: ['clean', 'package']
     dir: '.'
 
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: 'gcr.io/cloud-builders/docker'                                                      // to build a docker image in artifact registry
     args: ['build', '-t', 'gcr.io/sandbox-427408/gcloud-build-test-img:$SHORT_SHA', '.']
     dir: '.'
 
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: 'gcr.io/cloud-builders/docker'                                                      // to push the docker image in artifact registry
     args: ['push', 'gcr.io/sandbox-427408/gcloud-build-test-img:$SHORT_SHA']
 
-  - name: 'gcr.io/cloud-builders/gcloud'
+  - name: 'gcr.io/cloud-builders/gcloud'                                                      // to deploy the docker image in cloud build
     args: [
       'run', 'deploy', 'gcloud-build-test-img',
       '--image', 'gcr.io/sandbox-427408/gcloud-build-test-img:$SHORT_SHA',
